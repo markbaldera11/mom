@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Mother's Day!</title>
+    <!-- SEO META TAGS FOR GOOGLE SEARCH -->
+    <meta name="description" content="A beautiful and personalized Happy Mother's Day virtual greeting card. Send your love, appreciation, and a special surprise to the best mom in the world.">
+    <meta name="keywords" content="Mother's Day, Happy Mothers Day, greeting card, virtual card, mom, love, appreciation, gift">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow"> <!-- Tells Google to index this page -->
+
+    <!-- OPEN GRAPH TAGS (For sharing on Facebook, WhatsApp, iMessage, etc.) -->
+    <meta property="og:title" content="Happy Mother's Day!">
+    <meta property="og:description" content="A special Mother's Day surprise just for you!">
+    <meta property="og:image" content="https://scontent.fmnl9-6.fna.fbcdn.net/v/t39.30808-6/674049371_26475126212138201_3854753289462429527_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHcgfA10Du3mTbYLkwnyF_JMgZ7HtbkRhMyBnse1uRGE5f2_U_YH5CunSLyxiXNy316IWYRO1M8bcjnGj9DfzDI&_nc_ohc=YimRvLFeSTAQ7kNvwEWYolv&_nc_oc=Ado_Cda8nrFknaldL-4MrWbH0wE8f62xJ8RDWqQKpFNdWpB5BePerWK9T20H_FWB2VI&_nc_zt=23&_nc_ht=scontent.fmnl9-6.fna&_nc_gid=66YDds1JwgiwZjzk1Fv0Tg&_nc_ss=7b2a8&oh=00_Af7pRBdLUqpRy9CJaDNpGH7C6sEgR6hbmP7_dGUoNC3CxA&oe=6A05DDAA">
+    <meta property="og:type" content="website">
+    
+    <!-- 1. BROWSER TAB ICON (Favicon) -->
     <!-- Replace the link inside href="..." with your own image link -->
     <link rel="icon" href="https://scontent.fmnl9-6.fna.fbcdn.net/v/t39.30808-6/674049371_26475126212138201_3854753289462429527_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHcgfA10Du3mTbYLkwnyF_JMgZ7HtbkRhMyBnse1uRGE5f2_U_YH5CunSLyxiXNy316IWYRO1M8bcjnGj9DfzDI&_nc_ohc=YimRvLFeSTAQ7kNvwEWYolv&_nc_oc=Ado_Cda8nrFknaldL-4MrWbH0wE8f62xJ8RDWqQKpFNdWpB5BePerWK9T20H_FWB2VI&_nc_zt=23&_nc_ht=scontent.fmnl9-6.fna&_nc_gid=66YDds1JwgiwZjzk1Fv0Tg&_nc_ss=7b2a8&oh=00_Af7pRBdLUqpRy9CJaDNpGH7C6sEgR6hbmP7_dGUoNC3CxA&oe=6A05DDAA" type="image/jpg">
 
@@ -41,7 +54,7 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
-            z-index: 0; /* Keeps it behind the card */
+            z-index: 0;
             pointer-events: none;
         }
 
@@ -65,7 +78,15 @@
             max-width: 600px;
             width: 100%;
             backdrop-filter: blur(10px);
-            z-index: 1; /* Keeps card above hearts */
+            z-index: 1;
+        }
+
+        /* Header Icon Styling */
+        .header-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         /* Typography */
@@ -203,33 +224,39 @@
         @keyframes beat {
             to { transform: scale(1.2); }
         }
+
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Container for floating hearts -->
     <div id="bg-hearts"></div>
 
     <div class="card">
+        
+        <!-- 2. HEADER ICON -->
+        <!-- Replace the link inside src="..." with your own image link -->
+        <!-- <img src="https://cdn.vectorstock.com/i/500p/46/91/happy-mothers-day-gold-glitter-heart-banner-vector-37074691.jpg" alt="Header Icon" class="header-icon"> -->
+
         <h1>Happy Mother's Day! <span class="heart-beat">❤</span></h1>
         
-        <!-- Polaroid Photo Frame -->
         <div class="photo-frame">
-            <!-- Replace the src URL with your own photo -->
+            <!-- You can also put an image link here for her photo! -->
             <img src="https://scontent.fmnl9-6.fna.fbcdn.net/v/t39.30808-6/674049371_26475126212138201_3854753289462429527_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHcgfA10Du3mTbYLkwnyF_JMgZ7HtbkRhMyBnse1uRGE5f2_U_YH5CunSLyxiXNy316IWYRO1M8bcjnGj9DfzDI&_nc_ohc=YimRvLFeSTAQ7kNvwEWYolv&_nc_oc=Ado_Cda8nrFknaldL-4MrWbH0wE8f62xJ8RDWqQKpFNdWpB5BePerWK9T20H_FWB2VI&_nc_zt=23&_nc_ht=scontent.fmnl9-6.fna&_nc_gid=66YDds1JwgiwZjzk1Fv0Tg&_nc_ss=7b2a8&oh=00_Af7pRBdLUqpRy9CJaDNpGH7C6sEgR6hbmP7_dGUoNC3CxA&oe=6A05DDAA" alt="My Beautiful Mom">
             <p class="photo-caption">My favorite person</p>
         </div>
         
         <p>To the woman who does it all. Thank you for your endless love, your unwavering support, and the countless sacrifices you have made.</p>
         
-        <!-- Reasons List -->
         <div class="reasons-box">
-            <h3>Reasons You're the Absolute Best:</h3>
+            <h3>3 Reasons You're the Absolute Best:</h3>
             <ul>
                 <li>Your warm hugs can cure absolutely anything.</li>
                 <li>Your patience and wisdom guide me every day.</li>
-                <li>Your unconditional love makes all the difference.</li>
-                <li>And Everything else about you is perfect too!</li>
+                <li>Your cooking is unmatched (and I miss it!).</li>
             </ul>
         </div>
         
@@ -238,12 +265,11 @@
         <div id="surprise-message">
             <h2>You are loved beyond measure!</h2>
             <p>May your day be filled with as much joy, peace, and happiness as you bring to everyone around you. I love you!</p>
-            <p><strong>- GWENDALE</strong></p>
+            <p><strong>- [Your Name Here]</strong></p>
         </div>
     </div>
 
     <script>
-        // Feature 1: Reveal the hidden surprise message
         function revealSurprise() {
             const surpriseDiv = document.getElementById("surprise-message");
             const btn = document.querySelector("button");
@@ -254,17 +280,15 @@
             }
         }
 
-        // Feature 2: Generate floating background hearts
         function createFloatingHearts() {
             const container = document.getElementById('bg-hearts');
-            const heartCount = 20; // Number of hearts
+            const heartCount = 20;
 
             for (let i = 0; i < heartCount; i++) {
                 let heart = document.createElement('div');
                 heart.innerHTML = '❤';
                 heart.className = 'bg-heart';
                 
-                // Randomize position, size, and animation speed
                 heart.style.left = Math.random() * 100 + 'vw';
                 heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
                 heart.style.animationDuration = (Math.random() * 8 + 5) + 's';
@@ -274,7 +298,6 @@
             }
         }
 
-        // Run the heart function when the page loads
         window.onload = createFloatingHearts;
     </script>
 
