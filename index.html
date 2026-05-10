@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Mother's Day!</title>
+    <!-- Importing elegant fonts from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* General Setup */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Floating Background Hearts */
+        #bg-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0; /* Keeps it behind the card */
+            pointer-events: none;
+        }
+
+        .bg-heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.4);
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Greeting Card Container */
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 1; /* Keeps card above hearts */
+        }
+
+        /* Typography */
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #d81b60;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Polaroid Photo Frame */
+        .photo-frame {
+            background: #fff;
+            padding: 10px 10px 25px 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transform: rotate(-3deg);
+            margin: 20px auto 30px auto;
+            max-width: 250px;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .photo-caption {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            color: #888;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        /* Reasons List */
+        .reasons-box {
+            background: #fdf2f8;
+            border-left: 4px solid #f06292;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 0 10px 10px 0;
+            text-align: left;
+        }
+
+        .reasons-box h3 {
+            color: #d81b60;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .reasons-box ul {
+            list-style-type: none;
+            padding-left: 10px;
+        }
+
+        .reasons-box li {
+            margin-bottom: 8px;
+            color: #555;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .reasons-box li::before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 0.9rem;
+        }
+
+        /* Interactive Button */
+        button {
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(216, 27, 96, 0.3);
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #ad1457;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+        }
+
+        /* Hidden Surprise Section */
+        #surprise-message {
+            display: none;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #f8bbd0;
+            animation: fadeIn 1s ease-in;
+        }
+
+        #surprise-message h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ad1457;
+            margin-bottom: 10px;
+        }
+
+        .heart-beat {
+            color: #e91e63;
+            font-size: 1.5rem;
+            animation: beat 1s infinite alternate;
+            display: inline-block;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes beat {
+            to { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container for floating hearts -->
+    <div id="bg-hearts"></div>
+
+    <div class="card">
+        <h1>Happy Mother's Day! <span class="heart-beat">❤</span></h1>
+        
+        <!-- Polaroid Photo Frame -->
+        <div class="photo-frame">
+            <!-- Replace the src URL with your own photo -->
+            <img src="https://scontent.fmnl9-6.fna.fbcdn.net/v/t39.30808-6/674049371_26475126212138201_3854753289462429527_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeHcgfA10Du3mTbYLkwnyF_JMgZ7HtbkRhMyBnse1uRGE5f2_U_YH5CunSLyxiXNy316IWYRO1M8bcjnGj9DfzDI&_nc_ohc=YimRvLFeSTAQ7kNvwEWYolv&_nc_oc=Ado_Cda8nrFknaldL-4MrWbH0wE8f62xJ8RDWqQKpFNdWpB5BePerWK9T20H_FWB2VI&_nc_zt=23&_nc_ht=scontent.fmnl9-6.fna&_nc_gid=66YDds1JwgiwZjzk1Fv0Tg&_nc_ss=7b2a8&oh=00_Af7pRBdLUqpRy9CJaDNpGH7C6sEgR6hbmP7_dGUoNC3CxA&oe=6A05DDAA" alt="My Beautiful Mom">
+            <p class="photo-caption">My favorite person</p>
+        </div>
+        
+        <p>To the woman who does it all. Thank you for your endless love, your unwavering support, and the countless sacrifices you have made.</p>
+        
+        <!-- Reasons List -->
+        <div class="reasons-box">
+            <h3>Reasons You're the Absolute Best:</h3>
+            <ul>
+                <li>Your warm hugs can cure absolutely anything.</li>
+                <li>Your patience and wisdom guide me every day.</li>
+                <li>Your unconditional love makes all the difference.</li>
+                <li>And Everything else about you is perfect too!</li>
+            </ul>
+        </div>
+        
+        <button onclick="revealSurprise()">Tap for a special surprise</button>
+
+        <div id="surprise-message">
+            <h2>You are loved beyond measure!</h2>
+            <p>May your day be filled with as much joy, peace, and happiness as you bring to everyone around you. I love you!</p>
+            <p><strong>- GWENDALE</strong></p>
+        </div>
+    </div>
+
+    <script>
+        // Feature 1: Reveal the hidden surprise message
+        function revealSurprise() {
+            const surpriseDiv = document.getElementById("surprise-message");
+            const btn = document.querySelector("button");
+            
+            if (surpriseDiv.style.display === "none" || surpriseDiv.style.display === "") {
+                surpriseDiv.style.display = "block";
+                btn.style.display = "none";
+            }
+        }
+
+        // Feature 2: Generate floating background hearts
+        function createFloatingHearts() {
+            const container = document.getElementById('bg-hearts');
+            const heartCount = 20; // Number of hearts
+
+            for (let i = 0; i < heartCount; i++) {
+                let heart = document.createElement('div');
+                heart.innerHTML = '❤';
+                heart.className = 'bg-heart';
+                
+                // Randomize position, size, and animation speed
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 8 + 5) + 's';
+                heart.style.animationDelay = (Math.random() * 5) + 's';
+                
+                container.appendChild(heart);
+            }
+        }
+
+        // Run the heart function when the page loads
+        window.onload = createFloatingHearts;
+    </script>
+
+</body>
+</html>
